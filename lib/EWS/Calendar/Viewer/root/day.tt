@@ -1,8 +1,10 @@
+[% USE HTML.Strip %]
+
 <table class="day">
 <tr><th colspan="3" [% IF (retrieved.year == now.year) AND (retrieved.month == now.month) AND (retrieved.day == day) %] class="today"[% END %]>[% day %]</th></tr>
 
-[% FOREACH item IN entries %]
-[% NEXT IF item.IsCancelled OR item.IsDraft %]
+[% FOREACH item IN entries -%]
+[% NEXT IF item.IsCancelled OR item.IsDraft -%]
 
 [%# there should be a Model which does this business logic, and saves looping each day %]
 
@@ -28,7 +30,7 @@
                         [% item.Organizer | html_entity %][% ', ' IF item.has_DisplayTo %][% item.DisplayTo.join(', ') | html_entity %]
                     </td></tr>
                     <tr class="tiprow"><td class="tipkey">Availability:</td><td class="tipval">[% item.Status | html_entity %]</td></tr>
-                    <tr class="tiprow"><td class="tipval tipbody" colspan="2">[% item.Body | html_entity | html_line_break %]</td></tr>
+                    <tr class="tiprow"><td class="tipval tipbody" colspan="2">[% item.Body | html_strip | html_entity | html_line_break %]</td></tr>
                 </table>
             </span>
         </a>
