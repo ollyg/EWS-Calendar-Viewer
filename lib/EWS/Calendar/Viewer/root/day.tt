@@ -3,6 +3,7 @@
 
 [% FOREACH item IN entries -%]
 [% NEXT IF item.IsCancelled OR item.IsDraft -%]
+[% NEXT IF privacy_level == 'public' AND item.Status == 'Free' %]
 
 [%# there should be a Model which does this business logic, and saves looping each day %]
 
@@ -16,7 +17,7 @@
 <tr class="event[% ' allday' IF item.IsAllDayEvent %]">
     <td class="time">[% item.IsAllDayEvent ? '&nbsp;' : item.Start.strftime('%H:%M') %]</td>
     <td class="subject">
-        [% IF c.config.privacy == 'private' %]
+        [% IF privacy_level == 'private' %]
             <a href="#" class="tooltip">
                 [% item.Subject | truncate(18) %]
                 <span>
@@ -33,7 +34,7 @@
                     </table>
                 </span>
             </a>
-        [% ELSIF c.config.privacy == 'limited' %]
+        [% ELSIF privacy_level == 'limited' AND item.Sensitivity == 'Normal' %]
             <a href="#" class="tooltip">
                 [% item.Subject | truncate(18) %]
                 <span>
