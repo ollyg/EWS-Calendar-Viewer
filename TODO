@@ -1,5 +1,6 @@
-chain actions to set now
 data srruct with entries per day but rem to link long events multiply
 ask t0m about catinbox
 public and private views
 webauth oucs version?
+uri encode password
+remove password from debug screen

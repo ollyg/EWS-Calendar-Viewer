@@ -25,7 +25,7 @@ methods.
 
 sub base : Chained('/') PathPart('') CaptureArgs(0) {
     my( $self, $c )  = @_;
-    $c->stash->{now} = DateTime->now();
+    $c->stash->{now} = DateTime->now->set( day => 1 );
     $c->stash->{version} = $EWS::Calendar::Viewer::VERSION;
 
     my @days = (qw/ Sunday Monday Tuesday Wednesday Thursday Friday Saturday /);
