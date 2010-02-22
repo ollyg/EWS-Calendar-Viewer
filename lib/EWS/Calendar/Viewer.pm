@@ -8,7 +8,6 @@ use Catalyst qw/
     -Debug
     ConfigLoader
     Static::Simple
-    Cache
 /;
 
 our $VERSION = '0.01';
