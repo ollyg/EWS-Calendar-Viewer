@@ -53,7 +53,7 @@ sub custom_month : Chained('get_month') PathPart('') Args(0) {
 sub retrieve : Private {
     my ($self, $c) = @_;
 
-    $c->stash->{entries} = $c->model('EWSReader')->retrieve({
+    $c->stash->{entries} = $c->model('EWSClient')->calendar->retrieve({
         start => $c->stash->{now},
         end   => $c->stash->{now}->clone->add( months => 1 ),
     })->items;
