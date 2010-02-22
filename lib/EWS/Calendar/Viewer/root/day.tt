@@ -39,7 +39,8 @@
                 [% item.Subject | truncate(18) %]
                 <span>
                     <table class="tiptable">
-                        <tr class="tiprow"><td class="tipkey">Date:</td> <td class="tipval">[% item.TimeSpan | html_entity %]</td></tr>
+                        <tr class="tiprow"><td class="tipkey">Title:</td> <td class="tipval">[% item.Subject | html_entity %]</td></tr>
+                        <tr class="tiprow"><td class="tipkey">Date:</td>  <td class="tipval">[% item.TimeSpan | html_entity %]</td></tr>
                     </table>
                 </span>
             </a>
