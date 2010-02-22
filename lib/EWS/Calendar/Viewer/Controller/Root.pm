@@ -18,8 +18,8 @@ sub default : Private {
 
 =head2 base
 
-Simply adds the current date to the stash for some operations needed
-across various methods.
+Simply adds basic data to the stash for some operations needed across various
+methods.
 
 =cut
 
@@ -29,7 +29,7 @@ sub base : Chained('/') PathPart('') CaptureArgs(0) {
     $c->stash->{version} = $EWS::Calendar::Viewer::VERSION;
 
     my @days = (qw/ Sunday Monday Tuesday Wednesday Thursday Friday Saturday /);
-    my $sow = ($c->config->{start_of_week} || 1);  # default Monday
+    my $sow = $c->config->{start_of_week};
     $c->stash->{days} = [ @days[$sow .. 6], @days[0 .. ($sow - 1)] ];
 }
 

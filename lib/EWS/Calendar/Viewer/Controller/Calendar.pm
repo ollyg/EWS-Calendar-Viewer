@@ -24,7 +24,7 @@ sub index : Chained('base') PathPart('') Args(0) {
 
     $c->stash->{calendar} = calendar(
         $month, $year,
-        ($c->config->{start_of_week} || 1), # default Monday
+        $c->config->{start_of_week},
     );
     $c->stash->{entries} = $c->model('EWSReader')->retrieve({
         start => DateTime->new( year => $year, month => $month ),

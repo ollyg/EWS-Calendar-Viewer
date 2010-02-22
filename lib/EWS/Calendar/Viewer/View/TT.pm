@@ -5,8 +5,8 @@ use warnings FATAL => 'all';
 
 use base qw( Catalyst::View::TT );
 
-__PACKAGE__->config( {
+__PACKAGE__->config({
     WRAPPER => 'wrapper.tt'
-} );
+});
 
 1;
