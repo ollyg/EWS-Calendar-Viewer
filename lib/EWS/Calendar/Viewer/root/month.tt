@@ -1,0 +1,28 @@
+<h2>
+    <span class="tiddler">[% now.clone.subtract('months',1).month_abbr %]</span>
+    [% now.month_name %] [% now.year %]
+    <span class="tiddler">[% now.clone.add('months',1).month_abbr %]</span>
+</h2>
+<table class="calendar">
+<tr>
+    [% FOREACH item IN days %]
+        <th>[% item %]</th>
+    [% END %]
+</tr>
+[% FOREACH week IN calendar %]
+<tr>
+    [% FOREACH day IN week %]
+        [% IF day %]
+            <td class="inmonth">
+                [% INCLUDE day.tt %]
+            </td>
+        [% ELSE %]
+            <td>&nbsp;</td>
+            [% NEXT %]
+        [% END %]
+    [% END %]
+</tr>
+[% END %]
+</table>
+<p class="rss">Data retrieved by <a href="http://search.cpan.org/perldoc?EWS::Calendar::Viewer">EWS::Calendar::Viewer</a>
+    [% version %] at [% retrieved.ymd('-') %] [% retrieved.hms(':') %]</p>
