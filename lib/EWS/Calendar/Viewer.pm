@@ -78,6 +78,8 @@ C<password> option or via the environment variable C<EWS_PASS>.
 
 =over 4
 
+=item * L<EWS::Client>
+
 =item * L<Catalyst::Runtime> >= 5.8002
 
 =item * L<Catalyst::Plugin::ConfigLoader>

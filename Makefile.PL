@@ -15,6 +15,7 @@ requires 'Catalyst::Model::Adaptor';
 requires 'Catalyst::View::TT';
 requires 'Calendar::Simple';
 requires 'DateTime';
+requires 'EWS::Client';
 
 catalyst;
 

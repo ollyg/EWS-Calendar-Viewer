@@ -37,6 +37,8 @@ CONFIGURTATION
     the "password" option or via the environment variable "EWS_PASS".
 
 REQUIREMENTS
+    *   EWS::Client
+
     *   Catalyst::Runtime >= 5.8002
 
     *   Catalyst::Plugin::ConfigLoader
