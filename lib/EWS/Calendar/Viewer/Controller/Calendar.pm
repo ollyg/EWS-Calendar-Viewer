@@ -8,7 +8,7 @@ use base qw( Catalyst::Controller );
 use DateTime;
 use Calendar::Simple ();
 
-sub base : Chained('/base') PathPart('') CaptureArgs(0) {}
+sub base : Chained('/root/base') PathPart('') CaptureArgs(0) {}
 
 sub index : Chained('base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
