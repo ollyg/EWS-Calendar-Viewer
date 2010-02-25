@@ -2,9 +2,13 @@
     [% SET next_month = now.clone.add('months',1) %]
     [% SET prev_month = now.clone.subtract('months',1) %]
 
-    <span class="tiddler"><a href="[% c.uri_for_action('/calendar/index', prev_month.year, prev_month.strftime('%m')) %]">[% prev_month.month_abbr %]</a></span>
+    <span class="tiddler"><a href="[%
+        c.uri_for( c.controller('Calendar').action_for('custom_month'), [prev_month.year, prev_month.strftime('%m')] )
+    %]">[% prev_month.month_abbr %]</a></span>
     [% now.month_name %] [% now.year %]
-    <span class="tiddler"><a href="[% c.uri_for_action('/calednar/index', next_month.year, next_month.strftime('%m')) %]">[% next_month.month_abbr %]</a></span>
+    <span class="tiddler"><a href="[%
+        c.uri_for( c.controller('Calendar').action_for('custom_month'), [next_month.year, next_month.strftime('%m')] )
+    %]">[% next_month.month_abbr %]</a></span>
 </h2>
 <table class="calendar">
 <tr>

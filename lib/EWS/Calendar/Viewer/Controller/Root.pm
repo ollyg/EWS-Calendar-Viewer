@@ -5,14 +5,6 @@ use warnings;
 use base 'Catalyst::Controller';
 use DateTime;
 
-sub default : Private {
-    my( $self, $c ) = @_;
-
-    $c->res->redirect(
-        $c->uri_for_action('/calendar/index', DateTime->now->year, DateTime->now->month)
-    );
-}
-
 sub base : Chained('/') PathPart('') CaptureArgs(0) {
     my( $self, $c )  = @_;
 
@@ -25,7 +17,4 @@ sub base : Chained('/') PathPart('') CaptureArgs(0) {
     $c->stash->{days} = [ @days[$sow .. 6], @days[0 .. ($sow - 1)] ];
 }
 
-sub end : ActionClass('RenderView') {}
-
 1;
-

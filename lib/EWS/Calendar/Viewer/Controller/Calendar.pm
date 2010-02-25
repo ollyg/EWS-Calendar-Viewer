@@ -61,4 +61,6 @@ sub retrieve : Private {
     $c->stash->{retrieved} = DateTime->now();
 }
 
+sub end : ActionClass('RenderView') {}
+
 1;

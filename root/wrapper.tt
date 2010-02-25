@@ -9,7 +9,7 @@
 <body>
     <div id="contentwrapper">
         <div id="header">
-            <h1><a href="[% c.uri_for_action( '/calendar/index' ) %]">EWS Calendar Viewer</a></h1>
+            <h1><a href="[% c.uri_for( c.controller('Root').action_for('base') ) %]">EWS Calendar Viewer</a></h1>
         </div>
         <p id="note"></p>
         <div id="content">
