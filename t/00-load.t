@@ -3,4 +3,7 @@
 use strict;
 use warnings;
 use Test::More tests => 1;
-BEGIN { use_ok( 'EWS::Calendar::Viewer' ); }
+BEGIN {
+    $ENV{EWS_PASS} = 'EWS_TESTING_PASS';
+    use_ok( 'EWS::Calendar::Viewer' );
+}

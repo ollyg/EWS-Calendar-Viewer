@@ -2,7 +2,7 @@ NAME
     EWS::Calendar::Viewer - Share your MS Exchange Calendar via a Web Page
 
 VERSION
-    This document refers to version 0.01 of EWS::Calendar::Viewer
+    This document refers to version 0.02 of EWS::Calendar::Viewer
 
 SYNOPSIS
     I recommend you use something like App::BundleDeps to deploy this under

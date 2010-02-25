@@ -1,3 +1,10 @@
+libews-calendar-viewer-perl (0.03) UNRELEASED; urgency=low
+
+  * Fix dependencies
+  * Fix tests
+
+ -- Oliver Gorwits <oliver.gorwits@oucs.ox.ac.uk>  Thu, 25 Feb 2010 15:18:02 +0000
+
 libews-calendar-viewer-perl (0.01) UNRELEASED; urgency=low
 
   * Initial release on an unsuspecting world.

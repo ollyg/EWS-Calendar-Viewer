@@ -10,7 +10,7 @@ use Catalyst qw/
     Static::Simple
 /;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 $VERSION = eval $VERSION; # numify for warning-free dev releases
 
 # skip s3krits from dumped data
@@ -35,7 +35,7 @@ EWS::Calendar::Viewer - Share your MS Exchange Calendar via a Web Page
 
 =head1 VERSION
 
-This document refers to version 0.01 of EWS::Calendar::Viewer
+This document refers to version 0.02 of EWS::Calendar::Viewer
 
 =head1 SYNOPSIS
 
