@@ -5,6 +5,8 @@ use warnings;
 use base 'Catalyst::Controller';
 use DateTime;
 
+__PACKAGE__->config->{namespace} = '';
+
 sub base : Chained('/') PathPart('') CaptureArgs(0) {
     my( $self, $c )  = @_;
 
@@ -16,5 +18,7 @@ sub base : Chained('/') PathPart('') CaptureArgs(0) {
     my $sow = $c->config->{start_of_week};
     $c->stash->{days} = [ @days[$sow .. 6], @days[0 .. ($sow - 1)] ];
 }
+
+sub end : ActionClass('RenderView') {}
 
 1;

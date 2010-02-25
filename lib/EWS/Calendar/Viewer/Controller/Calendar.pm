@@ -8,9 +8,9 @@ use base qw( Catalyst::Controller );
 use DateTime;
 use Calendar::Simple ();
 
-sub base : Chained('/root/base') PathPart('') CaptureArgs(0) {}
+__PACKAGE__->config->{namespace} = 'calendar';
 
-sub index : Chained('base') PathPart('') Args(0) {
+sub index : Chained('/base') PathPart('') Args(0) {
     my ( $self, $c ) = @_;
 
     $c->stash->{calendar} = Calendar::Simple::calendar(
@@ -19,27 +19,27 @@ sub index : Chained('base') PathPart('') Args(0) {
         $c->config->{start_of_week},
     );
 
-    $c->forward('/calendar/retrieve');
+    $c->forward('retrieve');
     $c->stash->{template} = 'month.tt';
 }
 
-sub get_year : Chained('base') PathPart('') CaptureArgs(1) {
+sub get_year : Chained('/base') PathPart('') CaptureArgs(1) {
     my ( $self, $c, $year ) = @_;
 
-    $c->detach( '/calendar/index' ) unless $year =~ /^\d{4}$/;
+    $c->detach('index') unless $year =~ /^\d{4}$/;
     
     $c->stash->{now}->set( year => $year );
 }
 
 sub custom_year : Chained('get_year') PathPart('') Args(0) {
     my ($self, $c) = @_;
-    $c->forward('/calendar/index');
+    $c->forward('index');
 }
 
 sub get_month : Chained('get_year') PathPart('') CaptureArgs(1) {
     my ( $self, $c, $month ) = @_;
 
-    $c->detach( '/calendar/index' )
+    $c->detach('index')
         unless $month =~ /^\d{2}$/ and (($month >= 1) and ($month <= 12));
     
     $c->stash->{now}->set( month => $month );
@@ -47,7 +47,7 @@ sub get_month : Chained('get_year') PathPart('') CaptureArgs(1) {
 
 sub custom_month : Chained('get_month') PathPart('') Args(0) {
     my ($self, $c) = @_;
-    $c->forward('/calendar/index');
+    $c->forward('index');
 }
 
 sub retrieve : Private {
@@ -60,7 +60,5 @@ sub retrieve : Private {
 
     $c->stash->{retrieved} = DateTime->now();
 }
-
-sub end : ActionClass('RenderView') {}
 
 1;
