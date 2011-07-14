@@ -1,3 +1,7 @@
+{{$NEXT}}
+
+  * Port to Dist::Zilla
+
 libews-calendar-viewer-perl (0.03) UNRELEASED; urgency=low
 
   * Fix dependencies
