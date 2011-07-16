@@ -3,10 +3,10 @@ package EWS::Calendar::Viewer;
 use strict;
 use warnings FATAL => 'all';
 
+use File::ShareDir ();
 use Try::Tiny;
 use MRO::Compat;
 use Catalyst qw/
-    -Debug
     ConfigLoader
     Static::Simple
 /;
