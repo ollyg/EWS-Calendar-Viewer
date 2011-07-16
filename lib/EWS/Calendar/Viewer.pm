@@ -10,9 +10,6 @@ use Catalyst qw/
     Static::Simple
 /;
 
-our $VERSION = '0.02';
-$VERSION = eval $VERSION; # numify for warning-free dev releases
-
 # skip s3krits from dumped data
 sub dump_these {
     my $c = shift;
@@ -29,13 +26,7 @@ __PACKAGE__->setup;
 1;
 __END__
 
-=head1 NAME
-
-EWS::Calendar::Viewer - Share your MS Exchange Calendar via a Web Page
-
-=head1 VERSION
-
-This document refers to version 0.02 of EWS::Calendar::Viewer
+# ABSTRACT: Share your MS Exchange Calendar via a Web Page
 
 =head1 SYNOPSIS
 
@@ -101,16 +92,5 @@ C<password> option or via the environment variable C<EWS_PASS>.
 =item * L<MRO::Compat>
 
 =back
-
-=head1 AUTHOR
-
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright (c) Oliver Gorwits 2010.
-
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
 
 =cut
