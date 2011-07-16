@@ -24,7 +24,7 @@
                 [% INCLUDE day.tt %]
             </td>
         [% ELSE %]
-            <td>&nbsp;</td>
+            <td class="notinmonth">&nbsp;</td>
             [% NEXT %]
         [% END %]
     [% END %]
