@@ -1,24 +1,69 @@
-#!/usr/bin/env perl
-use inc::Module::Install;
 
-name 'EWS-Calendar-Viewer';
-all_from 'lib/EWS/Calendar/Viewer.pm';
+use strict;
+use warnings;
 
-requires 'Catalyst::Runtime' => '5.8002';
-requires 'Catalyst::Plugin::ConfigLoader';
-requires 'Catalyst::Plugin::Static::Simple';
-requires 'Catalyst::Action::RenderView';
-requires 'Config::General';
 
-requires 'MRO::Compat';
-requires 'Catalyst::Model::Adaptor';
-requires 'Catalyst::View::TT';
-requires 'Calendar::Simple';
-requires 'DateTime';
-requires 'EWS::Client';
 
-catalyst;
+use ExtUtils::MakeMaker 6.30;
 
-install_script glob('script/*.pl');
-auto_install;
-WriteAll;
+use File::ShareDir::Install;
+install_share dist => "share";
+
+
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'Share your MS Exchange Calendar via a Web Page',
+  'AUTHOR' => 'Oliver Gorwits <oliver@cpan.org>',
+  'BUILD_REQUIRES' => {},
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.30',
+    'File::ShareDir::Install' => '0.03'
+  },
+  'DISTNAME' => 'EWS-Calendar-Viewer',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'EWS::Calendar::Viewer',
+  'PREREQ_PM' => {
+    'Authen::NTLM' => '0',
+    'Calendar::Simple' => '0',
+    'Catalyst' => '0',
+    'Catalyst::Controller' => '0',
+    'Catalyst::Model::Adaptor' => '0',
+    'Catalyst::Plugin::ConfigLoader' => '0',
+    'Catalyst::Plugin::Static::Simple' => '0',
+    'Catalyst::View::TT' => '0',
+    'Config::General' => '0',
+    'DateTime' => '0',
+    'EWS::Client' => '1.111940',
+    'LWP::Authen::Ntlm' => '0',
+    'MRO::Compat' => '0'
+  },
+  'VERSION' => '1.111970',
+  'test' => {
+    'TESTS' => ''
+  }
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+
+

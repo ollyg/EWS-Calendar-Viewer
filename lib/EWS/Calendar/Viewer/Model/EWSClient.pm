@@ -1,4 +1,7 @@
 package EWS::Calendar::Viewer::Model::EWSClient;
+BEGIN {
+  $EWS::Calendar::Viewer::Model::EWSClient::VERSION = '1.111970';
+}
 
 use strict;
 use warnings FATAL => 'all';

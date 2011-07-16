@@ -2,7 +2,7 @@ NAME
     EWS::Calendar::Viewer - Share your MS Exchange Calendar via a Web Page
 
 VERSION
-    This document refers to version 0.02 of EWS::Calendar::Viewer
+    version 1.111970
 
 SYNOPSIS
     I recommend you use something like App::BundleDeps to deploy this under
@@ -10,8 +10,8 @@ SYNOPSIS
 
      privacy_level = limited
      start_of_week = 1
-     
- <Model::EWSClient>
+ 
+     <Model::EWSClient>
          <args>
              server   = myserver.example.com
              username = oliver
@@ -36,35 +36,12 @@ CONFIGURTATION
     for the calendar's account. The password can be set in the file using
     the "password" option or via the environment variable "EWS_PASS".
 
-REQUIREMENTS
-    *   EWS::Client
-
-    *   Catalyst::Runtime >= 5.8002
-
-    *   Catalyst::Plugin::ConfigLoader
-
-    *   Catalyst::Plugin::Static::Simple
-
-    *   Catalyst::Action::RenderView
-
-    *   Catalyst::Model::Adaptor
-
-    *   Catalyst::View::TT
-
-    *   Config::General
-
-    *   Calendar::Simple
-
-    *   DateTime
-
-    *   MRO::Compat
-
 AUTHOR
-    Oliver Gorwits "<oliver.gorwits@oucs.ox.ac.uk>"
+    Oliver Gorwits <oliver@cpan.org>
 
-COPYRIGHT & LICENSE
-    Copyright (c) Oliver Gorwits 2010.
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Oliver Gorwits.
 
-    This library is free software; you can redistribute it and/or modify it
-    under the same terms as Perl itself.
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 

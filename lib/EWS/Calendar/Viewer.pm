@@ -1,4 +1,7 @@
 package EWS::Calendar::Viewer;
+BEGIN {
+  $EWS::Calendar::Viewer::VERSION = '1.111970';
+}
 
 use strict;
 use warnings FATAL => 'all';
@@ -9,9 +12,6 @@ use Catalyst qw/
     ConfigLoader
     Static::Simple
 /;
-
-our $VERSION = '0.02';
-$VERSION = eval $VERSION; # numify for warning-free dev releases
 
 # skip s3krits from dumped data
 sub dump_these {
@@ -27,7 +27,9 @@ __PACKAGE__->config({
 __PACKAGE__->setup;
 
 1;
-__END__
+
+
+=pod
 
 =head1 NAME
 
@@ -35,7 +37,7 @@ EWS::Calendar::Viewer - Share your MS Exchange Calendar via a Web Page
 
 =head1 VERSION
 
-This document refers to version 0.02 of EWS::Calendar::Viewer
+version 1.111970
 
 =head1 SYNOPSIS
 
@@ -74,43 +76,21 @@ You'll need to set the server fully qualified domain name, and username for
 the calendar's account. The password can be set in the file using the
 C<password> option or via the environment variable C<EWS_PASS>.
 
-=head1 REQUIREMENTS
-
-=over 4
-
-=item * L<EWS::Client>
-
-=item * L<Catalyst::Runtime> >= 5.8002
-
-=item * L<Catalyst::Plugin::ConfigLoader>
-
-=item * L<Catalyst::Plugin::Static::Simple>
-
-=item * L<Catalyst::Action::RenderView>
-
-=item * L<Catalyst::Model::Adaptor>
-
-=item * L<Catalyst::View::TT>
-
-=item * L<Config::General>
-
-=item * L<Calendar::Simple>
-
-=item * L<DateTime>
-
-=item * L<MRO::Compat>
-
-=back
-
 =head1 AUTHOR
 
-Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>
+Oliver Gorwits <oliver@cpan.org>
 
-=head1 COPYRIGHT & LICENSE
+=head1 COPYRIGHT AND LICENSE
 
-Copyright (c) Oliver Gorwits 2010.
+This software is copyright (c) 2011 by Oliver Gorwits.
 
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself.
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+
+
+__END__
+
+# ABSTRACT: Share your MS Exchange Calendar via a Web Page
+

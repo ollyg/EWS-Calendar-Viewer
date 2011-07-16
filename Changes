@@ -1,3 +1,7 @@
+1.111970  2011-07-16 14:27:32 Europe/London
+
+  * Port to Dist::Zilla
+
 libews-calendar-viewer-perl (0.03) UNRELEASED; urgency=low
 
   * Fix dependencies

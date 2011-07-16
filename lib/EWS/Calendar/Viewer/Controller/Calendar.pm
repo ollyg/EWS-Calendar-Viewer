@@ -1,4 +1,7 @@
 package EWS::Calendar::Viewer::Controller::Calendar;
+BEGIN {
+  $EWS::Calendar::Viewer::Controller::Calendar::VERSION = '1.111970';
+}
 
 use strict;
 use warnings FATAL => 'all';
