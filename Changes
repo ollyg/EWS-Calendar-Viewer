@@ -1,5 +1,9 @@
 {{$NEXT}}
 
+  * Many fixes to support running uninstalled or installed, from test script
+  * Add probably-needed dependencies to avoid user head-scratching
+  * Use ShareDir for static and template content
+
 1.111970  2011-07-16 14:27:32 Europe/London
 
   * Port to Dist::Zilla

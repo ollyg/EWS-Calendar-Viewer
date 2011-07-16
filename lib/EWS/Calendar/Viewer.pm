@@ -3,6 +3,7 @@ package EWS::Calendar::Viewer;
 use strict;
 use warnings FATAL => 'all';
 
+use Try::Tiny;
 use MRO::Compat;
 use Catalyst qw/
     -Debug
@@ -14,11 +15,20 @@ use Catalyst qw/
 sub dump_these {
     my $c = shift;
     my @variables = $c->next::method(@_);
-    return grep { $_->[0] !~ m/^(?:Config|Response|Stash)$/ } @variables;
+    return grep { $_->[0] !~ m/^(?:Config|Stash)$/ } @variables;
 }
 
 __PACKAGE__->config({
     name => 'EWS::Calendar::Viewer',
+    static => {
+        include_path => [
+            try {
+                File::ShareDir::dist_dir('EWS-Calendar-Viewer')
+            } catch {
+                './share'
+            }
+        ],
+    },
 });
 
 __PACKAGE__->setup;
