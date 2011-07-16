@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+1.111972  2011-07-16 23:58:51 Europe/London
+
   * Fix missing use for File::ShareDir
   * Set req'd version on LWP::Protocol::https
   * Rename scripts to bin so it gets installed
