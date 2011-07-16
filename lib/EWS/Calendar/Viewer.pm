@@ -65,32 +65,4 @@ You'll need to set the server fully qualified domain name, and username for
 the calendar's account. The password can be set in the file using the
 C<password> option or via the environment variable C<EWS_PASS>.
 
-=head1 REQUIREMENTS
-
-=over 4
-
-=item * L<EWS::Client>
-
-=item * L<Catalyst::Runtime> >= 5.8002
-
-=item * L<Catalyst::Plugin::ConfigLoader>
-
-=item * L<Catalyst::Plugin::Static::Simple>
-
-=item * L<Catalyst::Action::RenderView>
-
-=item * L<Catalyst::Model::Adaptor>
-
-=item * L<Catalyst::View::TT>
-
-=item * L<Config::General>
-
-=item * L<Calendar::Simple>
-
-=item * L<DateTime>
-
-=item * L<MRO::Compat>
-
-=back
-
 =cut
