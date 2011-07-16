@@ -2,6 +2,9 @@
 
 BEGIN {
     $ENV{CATALYST_SCRIPT_GEN} = 40;
+
+    $ENV{CATALYST_CONFIG} ||=
+         (-d './examples' ? './examples' : './');
 }
 
 use Catalyst::ScriptRunner;
