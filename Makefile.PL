@@ -19,7 +19,11 @@ my %WriteMakefileArgs = (
     'File::ShareDir::Install' => '0.03'
   },
   'DISTNAME' => 'EWS-Calendar-Viewer',
-  'EXE_FILES' => [],
+  'EXE_FILES' => [
+    'bin/ews_calendar_viewer_fastcgi.pl',
+    'bin/ews_calendar_viewer_cgi.pl',
+    'bin/ews_calendar_viewer_server.pl'
+  ],
   'LICENSE' => 'perl',
   'NAME' => 'EWS::Calendar::Viewer',
   'PREREQ_PM' => {
@@ -31,17 +35,18 @@ my %WriteMakefileArgs = (
     'Catalyst::Model::Adaptor' => '0',
     'Catalyst::Plugin::ConfigLoader' => '0',
     'Catalyst::Plugin::Static::Simple' => '0',
+    'Catalyst::ScriptRunner' => '0',
     'Catalyst::View::TT' => '0',
     'Config::General' => '0',
     'DateTime' => '0',
     'EWS::Client' => '1.111940',
     'File::ShareDir' => '0',
     'LWP::Authen::Ntlm' => '0',
-    'LWP::Protocol::https' => '0',
+    'LWP::Protocol::https' => '6.02',
     'MRO::Compat' => '0',
     'Try::Tiny' => '0'
   },
-  'VERSION' => '1.111971',
+  'VERSION' => '1.111972',
   'test' => {
     'TESTS' => ''
   }

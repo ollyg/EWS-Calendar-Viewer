@@ -1,15 +1,15 @@
 package EWS::Calendar::Viewer;
 BEGIN {
-  $EWS::Calendar::Viewer::VERSION = '1.111971';
+  $EWS::Calendar::Viewer::VERSION = '1.111972';
 }
 
 use strict;
 use warnings FATAL => 'all';
 
+use File::ShareDir ();
 use Try::Tiny;
 use MRO::Compat;
 use Catalyst qw/
-    -Debug
     ConfigLoader
     Static::Simple
 /;
@@ -47,7 +47,7 @@ EWS::Calendar::Viewer - View Your MS Exchange Calendar as a Standalone Web App
 
 =head1 VERSION
 
-version 1.111971
+version 1.111972
 
 =head1 SYNOPSIS
 
