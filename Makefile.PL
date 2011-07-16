@@ -11,7 +11,7 @@ install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Share your MS Exchange Calendar via a Web Page',
+  'ABSTRACT' => 'View Your MS Exchange Calendar as a Standalone Web App',
   'AUTHOR' => 'Oliver Gorwits <oliver@cpan.org>',
   'BUILD_REQUIRES' => {},
   'CONFIGURE_REQUIRES' => {
@@ -26,6 +26,7 @@ my %WriteMakefileArgs = (
     'Authen::NTLM' => '0',
     'Calendar::Simple' => '0',
     'Catalyst' => '0',
+    'Catalyst::Action::RenderView' => '0',
     'Catalyst::Controller' => '0',
     'Catalyst::Model::Adaptor' => '0',
     'Catalyst::Plugin::ConfigLoader' => '0',
@@ -34,10 +35,13 @@ my %WriteMakefileArgs = (
     'Config::General' => '0',
     'DateTime' => '0',
     'EWS::Client' => '1.111940',
+    'File::ShareDir' => '0',
     'LWP::Authen::Ntlm' => '0',
-    'MRO::Compat' => '0'
+    'LWP::Protocol::https' => '0',
+    'MRO::Compat' => '0',
+    'Try::Tiny' => '0'
   },
-  'VERSION' => '1.111970',
+  'VERSION' => '1.111971',
   'test' => {
     'TESTS' => ''
   }

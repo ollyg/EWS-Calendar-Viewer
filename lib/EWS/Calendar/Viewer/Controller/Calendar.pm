@@ -1,6 +1,6 @@
 package EWS::Calendar::Viewer::Controller::Calendar;
 BEGIN {
-  $EWS::Calendar::Viewer::Controller::Calendar::VERSION = '1.111970';
+  $EWS::Calendar::Viewer::Controller::Calendar::VERSION = '1.111971';
 }
 
 use strict;

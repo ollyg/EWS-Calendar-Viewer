@@ -1,6 +1,6 @@
 package EWS::Calendar::Viewer::Model::EWSClient;
 BEGIN {
-  $EWS::Calendar::Viewer::Model::EWSClient::VERSION = '1.111970';
+  $EWS::Calendar::Viewer::Model::EWSClient::VERSION = '1.111971';
 }
 
 use strict;
