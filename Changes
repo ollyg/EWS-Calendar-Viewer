@@ -1,5 +1,7 @@
 {{$NEXT}}
 
+  * Move dependencies to EWS::Client
+
 1.111972  2011-07-16 23:58:51 Europe/London
 
   * Fix missing use for File::ShareDir
