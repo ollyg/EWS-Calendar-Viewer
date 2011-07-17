@@ -33,4 +33,4 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=EWS-Calendar-Viewer
   homepage: https://github.com/ollyg/EWS-Calendar-Viewer/wiki
   repository: git://github.com/ollyg/EWS-Calendar-Viewer.git
-version: 1.111980
+version: 1.111982

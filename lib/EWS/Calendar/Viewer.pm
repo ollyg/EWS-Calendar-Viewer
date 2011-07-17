@@ -1,6 +1,6 @@
 package EWS::Calendar::Viewer;
 BEGIN {
-  $EWS::Calendar::Viewer::VERSION = '1.111980';
+  $EWS::Calendar::Viewer::VERSION = '1.111982';
 }
 
 use strict;
@@ -47,7 +47,7 @@ EWS::Calendar::Viewer - View Your MS Exchange Calendar as a Standalone Web App
 
 =head1 VERSION
 
-version 1.111980
+version 1.111982
 
 =head1 SYNOPSIS
 

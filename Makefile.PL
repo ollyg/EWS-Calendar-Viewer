@@ -43,7 +43,7 @@ my %WriteMakefileArgs = (
     'MRO::Compat' => '0',
     'Try::Tiny' => '0'
   },
-  'VERSION' => '1.111980',
+  'VERSION' => '1.111982',
   'test' => {
     'TESTS' => ''
   }
