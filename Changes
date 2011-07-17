@@ -1,5 +1,9 @@
 {{$NEXT}}
 
+1.111982  2011-07-17 16:51:10 Europe/London
+
+  * Need to re-release to fix botched deps
+
 1.111980  2011-07-17 14:07:24 Europe/London
 
   * Move dependencies to EWS::Client
