@@ -27,7 +27,6 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'EWS::Calendar::Viewer',
   'PREREQ_PM' => {
-    'Authen::NTLM' => '0',
     'Calendar::Simple' => '0',
     'Catalyst' => '0',
     'Catalyst::Action::RenderView' => '0',
@@ -39,14 +38,12 @@ my %WriteMakefileArgs = (
     'Catalyst::View::TT' => '0',
     'Config::General' => '0',
     'DateTime' => '0',
-    'EWS::Client' => '1.111940',
+    'EWS::Client' => '1.111981',
     'File::ShareDir' => '0',
-    'LWP::Authen::Ntlm' => '0',
-    'LWP::Protocol::https' => '6.02',
     'MRO::Compat' => '0',
     'Try::Tiny' => '0'
   },
-  'VERSION' => '1.111972',
+  'VERSION' => '1.111980',
   'test' => {
     'TESTS' => ''
   }

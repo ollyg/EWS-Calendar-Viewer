@@ -1,6 +1,6 @@
 package EWS::Calendar::Viewer::View::TT;
 BEGIN {
-  $EWS::Calendar::Viewer::View::TT::VERSION = '1.111972';
+  $EWS::Calendar::Viewer::View::TT::VERSION = '1.111980';
 }
 
 use strict;
